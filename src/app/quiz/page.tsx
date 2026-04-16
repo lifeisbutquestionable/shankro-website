@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
+type ResultType = {
+  name: string;
+  desc: string;
+  price: string;
+  amc: string;
+};
 const quizData = {
   steps: [
     {
@@ -60,8 +66,8 @@ const quizData = {
 };
 export default function Quiz() {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [result, setResult] = useState(null);
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [result, setResult] = useState<ResultType | null>(null);
   const handleOption = (value: string) => {
     const newAnswers = { ...answers, [step]: value };
     setAnswers(newAnswers);
@@ -72,7 +78,7 @@ export default function Quiz() {
       calculateResult(newAnswers);
     }
   };
-  const calculateResult = (ans: any) => {
+  const calculateResult = (ans: Record<number, string>) => {
     if (ans[0] === 'office' || ans[1] === 'large' || ans[3] === 'premium') {
       setResult(quizData.results.C);
     } else if (ans[0] === 'home' && (ans[2] === 'borewell' || ans[3] === 'value')) {
