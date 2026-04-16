@@ -36,28 +36,28 @@ const services = [
 
 export default function Services() {
   return (
-    <<divdiv className="min-h-screen bg-gray-50">
-      <<NavbarNavbar />
-      <<headerheader className="py-16 px-6 text-center bg-white border-b">
-        <<hh1 className="text-4xl font-bold text-gray-900">Everything Your RO Will Ever Need</h1>
-        <<pp className="text-gray-500 mt-4 text-lg">Under One Roof</p>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <header className="py-16 px-6 text-center bg-white border-b">
+        <h1 className="text-4xl font-bold text-gray-900">Everything Your RO Will Ever Need</h1>
+        <p className="text-gray-500 mt-4 text-lg">Under One Roof</p>
       </header>
       
-      <<mainmain className="max-w-6xl mx-auto py-16 px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <main className="max-w-6xl mx-auto py-16 px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, idx) => (
-          <<divdiv key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
-            <<divdiv className="text-4xl mb-4">{service.icon}</div>
-            <<hh2 className="text-xl font-bold mb-3">{service.title}</h2>
-            <<pp className="text-gray-600 mb-6 flex-grow">{service.description}</p>
-            <<divdiv className="pt-4 border-t font-semibold text-blue-600">{service.price}</div>
+          <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+            <div className="text-4xl mb-4">{service.icon}</div>
+            <h2 className="text-xl font-bold mb-3">{service.title}</h2>
+            <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
+            <div className="pt-4 border-t font-semibold text-blue-600">{service.price}</div>
           </div>
         ))}
       </main>
 
-      <<sectionsection className="bg-blue-600 text-white py-12 text-center px-6">
-        <<divdiv className="max-w-3xl mx-auto">
-          <<hh2 className="text-2xl font-bold mb-2">Honest Diagnosis Guarantee</h2>
-          <<pp className="text-lg opacity-90">"We check TDS first. We only recommend what your RO actually needs. No upselling. Ever."</p>
+      <section className="bg-blue-600 text-white py-12 text-center px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-2">Honest Diagnosis Guarantee</h2>
+          <p className="text-lg opacity-90">"We check TDS first. We only recommend what your RO actually needs. No upselling. Ever."</p>
         </div>
       </section>
     </div>

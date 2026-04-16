@@ -86,19 +86,19 @@ export default function Quiz() {
   };
 
   return (
-    <<<divdivdiv className="min-h-screen bg-gray-50">
-      <<<NavbarNavbarNavbar />
-      <<<mainmainmain className="max-w-3xl mx-auto py-20 px-6">
-        <<<divdivdiv className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
+      <main className="max-w-3xl mx-auto py-20 px-6">
+        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
           {!result ? (
-            <<<divdivdiv className="text-center">
-              <<<divdivdiv className="mb-8 flex justify-center">
-                <<<divdivdiv className="text-sm font-bold text-blue-600 uppercase tracking-widest">Step {step + 1} of 4</div>
+            <div className="text-center">
+              <div className="mb-8 flex justify-center">
+                <div className="text-sm font-bold text-blue-600 uppercase tracking-widest">Step {step + 1} of 4</div>
               </div>
-              <<<hh2 className="text-3xl font-bold mb-10">{quizData.steps[step].question}</h2>
-              <<<divdivdiv className="grid grid-cols-1 gap-4">
+              <h2 className="text-3xl font-bold mb-10">{quizData.steps[step].question}</h2>
+              <div className="grid grid-cols-1 gap-4">
                 {quizData.steps[step].options.map((opt, idx) => (
-                  <<<buttonbuttonbutton 
+                  <button 
                     key={idx} 
                     onClick={() => handleOption(opt.value)} 
                     className="p-4 text-left rounded-xl border-2 border-gray-100 hover:border-blue-600 hover:bg-blue-50 transition font-medium text-lg"
@@ -109,23 +109,23 @@ export default function Quiz() {
               </div>
             </div>
           ) : (
-            <<<divdivdiv className="text-center">
-              <<<divdivdiv className="text-5xl mb-6">🎉</div>
-              <<<hh2 className="text-3xl font-bold mb-2">We Recommend: {result.name}</h2>
-              <<<pppp className="text-gray-600 mb-6 text-lg">{result.desc}</p>
-              <<<divdivdiv className="bg-blue-50 p-6 rounded-2xl mb-8 inline-block w-full max-w-md">
-                <<<divdivdiv className="text-gray-500 mb-1">Estimated Price</div>
-                <<<divdivdiv className="text-2xl font-bold text-blue-700 mb-4">{result.price}</div>
-                <<<divdivdiv className="text-gray-500 mb-1">Suggested Maintenance</div>
-                <<<divdivdiv className="font-semibold">{result.amc}</div>
+            <div className="text-center">
+              <div className="text-5xl mb-6">🎉</div>
+              <h2 className="text-3xl font-bold mb-2">We Recommend: {result.name}</h2>
+              <p className="text-gray-600 mb-6 text-lg">{result.desc}</p>
+              <div className="bg-blue-50 p-6 rounded-2xl mb-8 inline-block w-full max-w-md">
+                <div className="text-gray-500 mb-1">Estimated Price</div>
+                <div className="text-2xl font-bold text-blue-700 mb-4">{result.price}</div>
+                <div className="text-gray-500 mb-1">Suggested Maintenance</div>
+                <div className="font-semibold">{result.amc}</div>
               </div>
-              <<<divdivdiv className="space-y-4">
-                <<<aaaa href="/contact" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition">
+              <div className="space-y-4">
+                <a href="/contact" className="block w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition">
                   Book Your Unit Now
                 </a>
-                <<<pppp className="text-gray-500 italic text-sm">
+                <p className="text-gray-500 italic text-sm">
                   "Not convinced by your result? Call Shashank directly and he'll give you an honest recommendation in 5 minutes."
-                </pp>
+                </p>
               </div>
             </div>
           )}
