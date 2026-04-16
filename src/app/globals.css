@@ -15,9 +15,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-STEP 2: The Critical Missing Piece (tailwind.config.ts)
-If you don't have a tailwind.config.ts (or .js) in your root folder (not inside src), the website will always look like plain text.
-Create a file at the very root of your project called tailwind.config.js and paste this:
+2. Verify the Config (The Engine)
+Ensure you have a file in the ROOT (main folder) called tailwind.config.js. If it's not there, create it and paste this:
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -25,14 +24,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        blue: {
-          600: '#2563eb',
-          700: '#1d4ed8',
-        },
-      },
-    },
+    extend: {},
   },
   plugins: [],
 }
