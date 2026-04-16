@@ -64,19 +64,18 @@ export default function Quiz() {
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
 
-  const handleOption = (value) => {
+  const handleOption = (value: string) => {
     const newAnswers = { ...answers, [step]: value };
     setAnswers(newAnswers);
     
-    if (step << quiz quizData.steps.length - 1) {
+    if (step < quizData.steps.length - 1) {
       setStep(step + 1);
     } else {
       calculateResult(newAnswers);
     }
   };
 
-  const calculateResult = (ans) => {
-    // Logic based on Master Document
+  const calculateResult = (ans: any) => {
     if (ans[0] === 'office' || ans[1] === 'large' || ans[3] === 'premium') {
       setResult(quizData.results.C);
     } else if (ans[0] === 'home' && (ans[2] === 'borewell' || ans[3] === 'value')) {
