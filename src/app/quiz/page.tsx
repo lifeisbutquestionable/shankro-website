@@ -1,6 +1,6 @@
+"use client";
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
-
 const quizData = {
   steps: [
     {
@@ -58,12 +58,10 @@ const quizData = {
     }
   }
 };
-
 export default function Quiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
-
   const handleOption = (value: string) => {
     const newAnswers = { ...answers, [step]: value };
     setAnswers(newAnswers);
@@ -74,7 +72,6 @@ export default function Quiz() {
       calculateResult(newAnswers);
     }
   };
-
   const calculateResult = (ans: any) => {
     if (ans[0] === 'office' || ans[1] === 'large' || ans[3] === 'premium') {
       setResult(quizData.results.C);
@@ -84,7 +81,6 @@ export default function Quiz() {
       setResult(quizData.results.A);
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
