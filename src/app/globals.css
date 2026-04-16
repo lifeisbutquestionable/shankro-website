@@ -15,16 +15,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-2. Verify the Config (The Engine)
-Ensure you have a file in the ROOT (main folder) called tailwind.config.js. If it's not there, create it and paste this:
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
